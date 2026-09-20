@@ -138,7 +138,7 @@ function renderStage(){
   $("imageProjectCode").textContent = p.id;
   $("projectName").textContent = p.name;
   $("projectStatus").textContent = p.status;
-
+  renderCriticalTasks(p);
   $("stageProject").textContent = p.name;
   $("stageCounter").textContent = `${String(currentStage+1).padStart(2,"0")} / ${String(p.stages.length).padStart(2,"0")}`;
   $("stageCode").textContent = `STAGE ${String(currentStage+1).padStart(2,"0")}`;
