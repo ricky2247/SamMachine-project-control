@@ -8,6 +8,6 @@
   - NEVER put a service_role/secret key in this file.
 */
 window.SUPABASE_CONFIG = {
-  url: "YOUR_SUPABASE_URL",
-  anonKey: "YOUR_SUPABASE_ANON_KEY"
+  url: "https://mfjcudvqnaqpwghmgehk.supabase.co",
+  anonKey: "sb_publishable_zHqs26M3tbLyj01hfLsRxw_uGzgZfp2"
 };
