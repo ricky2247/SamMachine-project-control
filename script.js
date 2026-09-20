@@ -3,11 +3,13 @@ const projects = [
     id:"P-01", name:"Hybrid P. Machine", status:"ON HOLD",
     image:"assets/p1.png",
     stages:[
-      {title:"DESIGN", desc:"طراحی اولیه و نهایی‌سازی نقشه‌های مهندسی پروژه.", progress:100, status:"COMPLETED", deadline:"12 SEP 2026", responsible:"ENGINEERING"},
-      {title:"PROCUREMENT", desc:"تأمین قطعات، مواد اولیه و تجهیزات مورد نیاز.", progress:82, status:"IN PROGRESS", deadline:"19 SEP 2026", responsible:"PROCUREMENT"},
-      {title:"FABRICATION", desc:"ساخت قطعات و اجرای عملیات ماشین‌کاری و ورق‌کاری.", progress:64, status:"IN PROGRESS", deadline:"28 SEP 2026", responsible:"WORKSHOP"},
-      {title:"ASSEMBLY", desc:"مونتاژ زیرمجموعه‌ها و یکپارچه‌سازی دستگاه.", progress:25, status:"IN PROGRESS", deadline:"10 OCT 2026", responsible:"ASSEMBLY"},
-      {title:"TESTING", desc:"تست عملکرد، رفع ایرادات و تحویل نهایی.", progress:0, status:"PENDING", deadline:"18 OCT 2026", responsible:"QA"}
+      {title:"FIRST STAGE DESIGN", desc:"طراحی اولیه و شمای کلی دستگاه", progress:100, status:"COMPLETED", deadline:"1 SEP 2026", responsible:"REZA A"},
+      {title:"PROCUREMENT ESSENTIAL PARTS", desc:"تأمین قطعات و تجهییزات حداقلی برای مشخص شدن ابعاد دیتیل دیزاین", progress:0, status:"IN PROGRESS", deadline:"-", responsible:"PROCUREMENT"},
+      {title:"REDESIGN & FABRICATION PLAN", desc:"طراحی جزئی تر و پلن برای روش ساخت اجزایی مثل شاسی و...", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
+      {title:"FINDING MANUFACTURER & BUILDING", desc:"مشخص کردن سازنده ها و تامین کننده ها و ساخت", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
+      {title:"ASSEMBLING", desc:"پیاده سازی و اتصال قطعات و...", progress:0, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
+      {title:"TESTING", desc:"تست عملکرد، گزارش و رفع ایرادات", progress:0, status:"PENDING", deadline:"-", responsible:"QA"}
+      {title:"FINALIZATION", desc:"مرحله پایانی و سفارش تعداد", progress:0, status:"PENDING", deadline:"-", responsible:"-"}
     ]
   },
   {
