@@ -253,7 +253,8 @@ function subscribeToComments(){
 }
 
 function initComments(){
-  const cfg=window.SUPABASE_CONFIG||{};
+  const cfg=window.SUPABASE_CONFIG||{url: "https://mfjcudvqnaqpwghmgehk.supabase.co/rest/v1/",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mamN1ZHZxbmFxcHdnaG1nZWhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4OTI5NjcsImV4cCI6MjEwNTQ2ODk2N30.glx_gveQ0R50167ESeJrXQMbZbl-EuItQ8vwnZh2Oq4"};
 
   if(window.supabase && cfg.url && cfg.anonKey &&
      !cfg.url.includes("YOUR_SUPABASE") &&
