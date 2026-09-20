@@ -165,7 +165,27 @@ function renderStage(){
     });
   });
 }
+function renderCriticalTasks(project){
+  const container = $("criticalTasks");
 
+  if(!container) return;
+
+  const tasks = project.criticalTasks || [];
+
+  if(!tasks.length){
+    container.innerHTML = `
+      <div class="critical-empty">NO CRITICAL TASKS</div>
+    `;
+    return;
+  }
+
+  container.innerHTML = tasks.map(task => `
+    <div class="critical-task">
+      <span class="critical-task-name">${task}</span>
+      <span class="critical-dot"></span>
+    </div>
+  `).join("");
+}
 function renderOverview(){
   $("overviewGrid").innerHTML = projects.map(p=>`
     <div class="overview-item">
