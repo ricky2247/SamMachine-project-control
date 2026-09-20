@@ -1,7 +1,7 @@
 const projects = [
   {
-    id:"P-01", name:"PRINTING SYSTEM", status:"ACTIVE",
-    image:"assets/project-1.svg",
+    id:"P-01", name:"Hybrid P. Machine", status:"ACTIVE",
+    image:"assets/p1.png",
     stages:[
       {title:"DESIGN", desc:"طراحی اولیه و نهایی‌سازی نقشه‌های مهندسی پروژه.", progress:100, status:"COMPLETED", deadline:"12 SEP 2026", responsible:"ENGINEERING"},
       {title:"PROCUREMENT", desc:"تأمین قطعات، مواد اولیه و تجهیزات مورد نیاز.", progress:82, status:"IN PROGRESS", deadline:"19 SEP 2026", responsible:"PROCUREMENT"},
@@ -11,7 +11,7 @@ const projects = [
     ]
   },
   {
-    id:"P-02", name:"AUTOMATION UNIT", status:"ACTIVE",
+    id:"P-02", name:"320 P. Machine", status:"ACTIVE",
     image:"assets/project-2.svg",
     stages:[
       {title:"CONCEPT", desc:"تعریف نیازمندی‌ها و معماری کلی سیستم.", progress:100, status:"COMPLETED", deadline:"05 SEP 2026", responsible:"R&D"},
@@ -22,7 +22,7 @@ const projects = [
     ]
   },
   {
-    id:"P-03", name:"MECHANICAL PLATFORM", status:"ON HOLD",
+    id:"P-03", name:"180 P. Machine", status:"ON HOLD",
     image:"assets/project-3.svg",
     stages:[
       {title:"REQUIREMENTS", desc:"جمع‌آوری و تحلیل نیازمندی‌های پروژه.", progress:100, status:"COMPLETED", deadline:"01 SEP 2026", responsible:"PMO"},
@@ -33,7 +33,7 @@ const projects = [
     ]
   },
   {
-    id:"P-04", name:"ROBOTIC MODULE", status:"ACTIVE",
+    id:"P-04", name:"Roller", status:"ACTIVE",
     image:"assets/project-4.svg",
     stages:[
       {title:"RESEARCH", desc:"بررسی راهکارها و انتخاب معماری ربات.", progress:100, status:"COMPLETED", deadline:"08 SEP 2026", responsible:"R&D"},
@@ -202,48 +202,62 @@ function renderComments(comments){
   `).join("");
 }
 
-function getLocalComments(){
-  try{return JSON.parse(localStorage.getItem("pcc_comments")||"[]");}
-  catch{return []}
-}
-
-function saveLocalComment(comment){
-  const comments=getLocalComments();
-  comments.unshift(comment);
-  localStorage.setItem("pcc_comments",JSON.stringify(comments.slice(0,100)));
-  renderComments(comments.slice(0,100));
-}
-
 async function loadComments(){
   if(!supabaseClient){
-    setCommentConnection("LOCAL MODE","local");
-    renderComments(getLocalComments());
+    setCommentConnection("SUPABASE REQUIRED","offline");
+    renderComments([]);
     return;
   }
+
   setCommentConnection("SYNCED","online");
-  const {data,error}=await supabaseClient.from("project_comments").select("id,author,message,created_at").order("created_at",{ascending:false}).limit(100);
+  const {data,error}=await supabaseClient
+    .from("project_comments")
+    .select("id,author,message,created_at")
+    .order("created_at",{ascending:false})
+    .limit(100);
+
   if(error){
     console.error(error);
-    setCommentConnection("OFFLINE","offline");
-    renderComments(getLocalComments());
+    setCommentConnection("CONNECTION ERROR","offline");
+    renderComments([]);
     return;
   }
+
   renderComments(data||[]);
 }
 
 async function postComment(author,message){
   if(!supabaseClient){
-    saveLocalComment({author,message,created_at:new Date().toISOString()});
-    return;
+    throw new Error("Supabase is not configured.");
   }
-  const {error}=await supabaseClient.from("project_comments").insert({author,message});
+
+  const {error}=await supabaseClient
+    .from("project_comments")
+    .insert({author,message});
+
   if(error) throw error;
   await loadComments();
 }
 
+function subscribeToComments(){
+  if(!supabaseClient) return;
+
+  supabaseClient
+    .channel("global-project-comments")
+    .on(
+      "postgres_changes",
+      {event:"*",schema:"public",table:"project_comments"},
+      () => loadComments()
+    )
+    .subscribe();
+}
+
 function initComments(){
   const cfg=window.SUPABASE_CONFIG||{};
-  if(window.supabase && cfg.url && cfg.anonKey && !cfg.url.includes("YOUR_SUPABASE") && !cfg.anonKey.includes("YOUR_SUPABASE")){
+
+  if(window.supabase && cfg.url && cfg.anonKey &&
+     !cfg.url.includes("YOUR_SUPABASE") &&
+     !cfg.anonKey.includes("YOUR_SUPABASE")){
     supabaseClient=window.supabase.createClient(cfg.url,cfg.anonKey);
   }
 
@@ -253,6 +267,7 @@ function initComments(){
 
   $("commentForm").addEventListener("submit",async event=>{
     event.preventDefault();
+
     const author=$("commentAuthor").value.trim();
     const message=$("commentMessage").value.trim();
     if(!author || !message) return;
@@ -260,6 +275,7 @@ function initComments(){
     const button=$("commentSubmit");
     button.disabled=true;
     button.textContent="POSTING...";
+
     try{
       await postComment(author,message);
       $("commentMessage").value="";
@@ -267,7 +283,7 @@ function initComments(){
       button.textContent="POST COMMENT";
     }catch(error){
       console.error(error);
-      alert("Comment could not be posted. Check your Supabase configuration.");
+      alert("Comments are not connected yet. Configure Supabase first.");
       button.textContent="TRY AGAIN";
     }finally{
       button.disabled=false;
@@ -275,9 +291,35 @@ function initComments(){
   });
 
   loadComments();
+  subscribeToComments();
+}
+
+function initTheme(){
+  const saved=localStorage.getItem("pcc_theme") || "dark";
+  applyTheme(saved);
+
+  $("themeToggle").addEventListener("click",()=>{
+    const next=document.body.classList.contains("light-theme") ? "dark" : "light";
+    applyTheme(next);
+  });
+}
+
+function applyTheme(theme){
+  const light=theme==="light";
+  document.body.classList.toggle("light-theme",light);
+
+  $("themeIcon").textContent=light ? "☾" : "☀";
+  $("themeText").textContent=light ? "DARK" : "LIGHT";
+  $("themeToggle").setAttribute(
+    "aria-label",
+    light ? "Switch to dark mode" : "Switch to light mode"
+  );
+
+  localStorage.setItem("pcc_theme",light ? "light" : "dark");
 }
 
 function renderAll(){
+  initTheme();
   renderProjectCards();
   renderStage();
   renderOverview();

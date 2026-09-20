@@ -1,32 +1,32 @@
-PROJECT CONTROL CENTER - LIGHT VERSION
+PROJECT CONTROL CENTER
+======================
 
-FILES
+This package is based ONLY on the uploaded light-v10 reference.
+
+THEME
 -----
-index.html       Main page
-style.css        Light/white responsive design
-script.js        Projects, stages, carousel, comments
-supabase-config.js  Supabase public client configuration
-assets/          Project images
+- Default theme: DARK.
+- The theme button is in the bottom bar.
+- Clicking it switches between DARK and LIGHT.
+- The selected theme is remembered in the browser with localStorage.
+- Project comments are NOT stored in localStorage.
 
-PROJECT SELECTION
------------------
-- Hover only changes the visual emphasis.
-- Hover NEVER selects a project.
-- Click/tap selects a project.
-- The selected project is centered and larger.
-- The other projects remain around it in a curved layout.
-- Mobile/touch layouts are included.
+GLOBAL COMMENTS
+---------------
+The comments box is GLOBAL:
+- It is not tied to the selected project.
+- All users see the same comment list.
+- Supabase Realtime is enabled so new comments can appear for other users without refreshing.
 
-IMAGES
-------
-Project images are displayed with object-fit: contain.
-The image box keeps its dimensions and the complete image is shown.
-Replace the sample image paths in script.js, for example:
-  image:"assets/project-1.png"
+IMPORTANT: HOW TO STORE COMMENTS ON THE SITE
+--------------------------------------------
+A static website cannot make comments global by itself. You need a database.
 
-SHARED COMMENTS WITH SUPABASE
------------------------------
-1. Create a Supabase project.
+Use Supabase (free tier is enough for a small internal team).
+
+1. Create a project at:
+   https://supabase.com/
+
 2. Open SQL Editor and run:
 
 create table public.project_comments (
@@ -41,33 +41,54 @@ alter table public.project_comments enable row level security;
 create policy "public can read comments"
 on public.project_comments
 for select
+to anon
 using (true);
 
 create policy "public can add comments"
 on public.project_comments
 for insert
+to anon
 with check (
   char_length(author) between 1 and 40
   and char_length(message) between 1 and 500
 );
 
-3. Open Supabase -> Project Settings -> API.
-4. Copy the Project URL and Publishable/anon public key.
-5. Put them into supabase-config.js.
+3. For live updates, enable Realtime for the table.
+   In Supabase Dashboard:
+   Database -> Publications / Realtime
+   Make sure project_comments is included in the realtime publication.
 
-Example:
+4. Open:
+   Project Settings -> API
+
+5. Copy:
+   - Project URL
+   - Publishable/anon public key
+
+6. Put them in supabase-config.js:
+
 window.SUPABASE_CONFIG = {
   url: "https://xxxxxxxx.supabase.co",
   anonKey: "YOUR_PUBLIC_KEY"
 };
 
-NEVER put a service_role/secret key in the website.
+NEVER put a service_role or secret key in the website.
 
-If Supabase is not configured, the comment box falls back to localStorage,
-which means comments remain only on that browser/device.
+AFTER DEPLOYMENT
+----------------
+Once the real Supabase URL/key are entered:
+- comments are stored in the Supabase database, not in the browser;
+- the same comments are visible on different computers/phones;
+- closing the browser does not delete them;
+- the comments are shared globally across the site.
+
+If Supabase is not configured, this version intentionally does NOT silently save
+comments to localStorage. It shows "SUPABASE REQUIRED" instead.
 
 GITHUB PAGES
 ------------
 Upload the contents of this folder to a GitHub repository with index.html
-in the repository root. Enable GitHub Pages from Settings -> Pages ->
-Deploy from a branch -> main -> /(root).
+in the repository root.
+
+Then:
+Settings -> Pages -> Deploy from a branch -> main -> /(root)

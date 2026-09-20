@@ -1,11 +1,11 @@
 /*
   Supabase configuration
   ----------------------
-  Replace the two values below with your Supabase Project URL and
-  Publishable/anon public key.
+  Put your Supabase Project URL and Publishable/anon public key here.
 
   IMPORTANT:
-  Never put a service_role/secret key in this file.
+  - Use only the public Publishable/anon key.
+  - NEVER put a service_role/secret key in this file.
 */
 window.SUPABASE_CONFIG = {
   url: "YOUR_SUPABASE_URL",
