@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT CONTROL CENTER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="grid-bg"></div>
+
+  <header class="site-header">
+    <div class="eyebrow">PROJECT OPERATIONS // PRIVATE CHANNEL</div>
+    <h1>SAM MACHINE PROJECT</h1>
+    <p>سامانه کنترل و پایش وضعیت پروژه‌ها</p>
+    <div class="header-line"><span></span><b>LIVE</b><span></span></div>
+    <aside class="priority-panel"><div class="priority-title">PRIORITY TASKS</div><div id="priorityTasks"></div></aside>
+  </header>
+
+  <main class="container main-layout">
+    <div class="main-content">
+    <section class="project-selector">
+      <div class="section-title">
+        <span class="index">01</span>
+        <div>
+          <h2>PROJECTS</h2>
+          <p>انتخاب پروژه</p>
+        </div>
+      </div>
+      <div class="carousel-wrap"><div id="projectCards" class="project-cards"></div></div><div class="carousel-hint">HOVER TO INSPECT // CLICK TO SELECT</div>
+    </section>
+
+    <section class="project-detail">
+      <div class="image-panel">
+        <div class="panel-label">PROJECT VISUAL</div>
+        <div class="image-frame">
+          <img id="projectImage" src="assets/project-1.svg" alt="Project">
+          <div class="corner c1"></div><div class="corner c2"></div>
+          <div class="corner c3"></div><div class="corner c4"></div>
+          <div class="image-status">VISUAL // <span id="imageProjectCode">P-01</span></div>
+        </div>
+        <div class="project-meta">
+          <span id="projectName">PROJECT 01</span>
+          <span id="projectStatus">ACTIVE</span>
+        </div>
+      </div>
+
+      <div class="stage-panel">
+        <div class="panel-label">STAGE CONTROL</div>
+        <div class="stage-navigation">
+          <button id="prevBtn" class="nav-btn" aria-label="Previous stage">‹</button>
+
+          <div class="stage-card">
+            <div class="stage-top">
+              <div>
+                <span class="micro-label">PROJECT</span>
+                <strong id="stageProject">PROJECT 01</strong>
+              </div>
+              <div class="stage-counter" id="stageCounter">01 / 05</div>
+            </div>
+
+            <div class="stage-title-wrap">
+              <span class="stage-code" id="stageCode">STAGE 01</span>
+              <h3 id="stageTitle">DESIGN</h3>
+            </div>
+
+            <p id="stageDescription" class="stage-description"></p>
+
+            <div class="progress-block">
+              <div class="progress-header">
+                <span>PROGRESS</span>
+                <strong id="progressValue">0%</strong>
+              </div>
+              <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+              </div>
+            </div>
+
+            <div class="stage-data">
+              <div><span>STATUS</span><b id="stageStatus">IN PROGRESS</b></div>
+              <div><span>DEADLINE</span><b id="stageDeadline">--</b></div>
+              <div><span>RESPONSIBLE</span><b id="stageResponsible">--</b></div>
+            </div>
+          </div>
+
+          <button id="nextBtn" class="nav-btn" aria-label="Next stage">›</button>
+        </div>
+
+        <div id="stageDots" class="stage-dots"></div>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="section-title">
+        <span class="index">02</span>
+        <div>
+          <h2>PROJECTS OVERVIEW</h2>
+          <p>نمای کلی وضعیت</p>
+        </div>
+      </div>
+      <div id="overviewGrid" class="overview-grid"></div>
+    </section>
+    </div>
+
+    <section class="comments-panel" aria-label="Project comments">
+      <div class="comments-header">
+        <div>
+          <span class="panel-label">TEAM COMMENTS</span>
+          <h2>COMMENTS</h2>
+        </div>
+        <span id="commentConnection" class="comment-connection">LOCAL</span>
+      </div>
+      <form id="commentForm" class="comment-form">
+        <input id="commentAuthor" type="text" maxlength="40" placeholder="Your name" autocomplete="name" required>
+        <textarea id="commentMessage" maxlength="500" rows="4" placeholder="Write a project comment..." required></textarea>
+        <div class="comment-form-bottom">
+          <span id="commentCount">0 / 500</span>
+          <button type="submit" id="commentSubmit">POST COMMENT</button>
+        </div>
+      </form>
+      <div id="commentsList" class="comments-list" aria-live="polite">
+        <div class="comments-empty">NO COMMENTS YET</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>PROJECT CONTROL SYSTEM</span>
+    <span>SECURE // INTERNAL USE</span>
+    <span id="clock">--:--:--</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
