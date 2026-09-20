@@ -8,6 +8,7 @@ const projects = [
       {title:"REDESIGN & FABRICATION PLAN", desc:"طراحی جزئی تر و پلن برای روش ساخت اجزایی مثل شاسی و...", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
       {title:"FINDING MANUFACTURER & BUILDING", desc:"مشخص کردن سازنده ها و تامین کننده ها و ساخت", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
       {title:"ASSEMBLING", desc:"پیاده سازی و اتصال قطعات و...", progress:0, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
+      {title:"ELECTRICAL DESIGN", desc:"تامین، طراحی و پیاده سازی برد ها و مدار های الکتریکی و سیم کشی اجزا", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
       {title:"TESTING", desc:"تست عملکرد، گزارش و رفع ایرادات", progress:0, status:"PENDING", deadline:"-", responsible:"QA"},
       {title:"FINALIZATION", desc:"مرحله پایانی و سفارش تعداد", progress:0, status:"PENDING", deadline:"-", responsible:"-"}
     ]
