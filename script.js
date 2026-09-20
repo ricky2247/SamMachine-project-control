@@ -12,7 +12,7 @@ const projects = [
   },
   {
     id:"P-02", name:"320 P. Machine", status:"ACTIVE",
-    image:"assets/p2.png.svg",
+    image:"assets/project-2.svg",
     stages:[
       {title:"CONCEPT", desc:"تعریف نیازمندی‌ها و معماری کلی سیستم.", progress:100, status:"COMPLETED", deadline:"05 SEP 2026", responsible:"R&D"},
       {title:"DESIGN", desc:"طراحی مکانیکی و جانمایی اجزای سیستم.", progress:91, status:"IN PROGRESS", deadline:"22 SEP 2026", responsible:"ENGINEERING"},
