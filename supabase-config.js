@@ -1,8 +1,11 @@
 /*
   Supabase configuration
   ----------------------
-  Put your Supabase project values here after creating the database.
-  These are public client values; NEVER put a service_role/secret key here.
+  Replace the two values below with your Supabase Project URL and
+  Publishable/anon public key.
+
+  IMPORTANT:
+  Never put a service_role/secret key in this file.
 */
 window.SUPABASE_CONFIG = {
   url: "YOUR_SUPABASE_URL",

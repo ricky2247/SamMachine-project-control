@@ -1,7 +1,7 @@
 const projects = [
   {
-    id:"P-01", name:"Hybrid P. Machine", status:"ACTIVE",
-    image:"assets/p1.png",
+    id:"P-01", name:"PRINTING SYSTEM", status:"ACTIVE",
+    image:"assets/project-1.svg",
     stages:[
       {title:"DESIGN", desc:"طراحی اولیه و نهایی‌سازی نقشه‌های مهندسی پروژه.", progress:100, status:"COMPLETED", deadline:"12 SEP 2026", responsible:"ENGINEERING"},
       {title:"PROCUREMENT", desc:"تأمین قطعات، مواد اولیه و تجهیزات مورد نیاز.", progress:82, status:"IN PROGRESS", deadline:"19 SEP 2026", responsible:"PROCUREMENT"},
@@ -11,7 +11,7 @@ const projects = [
     ]
   },
   {
-    id:"P-02", name:"320 P. Machine", status:"ACTIVE",
+    id:"P-02", name:"AUTOMATION UNIT", status:"ACTIVE",
     image:"assets/project-2.svg",
     stages:[
       {title:"CONCEPT", desc:"تعریف نیازمندی‌ها و معماری کلی سیستم.", progress:100, status:"COMPLETED", deadline:"05 SEP 2026", responsible:"R&D"},
@@ -22,8 +22,8 @@ const projects = [
     ]
   },
   {
-    id:"P-03", name:"180 P. Machine", status:"ON HOLD",
-    image:"assets/p3.png",
+    id:"P-03", name:"MECHANICAL PLATFORM", status:"ON HOLD",
+    image:"assets/project-3.svg",
     stages:[
       {title:"REQUIREMENTS", desc:"جمع‌آوری و تحلیل نیازمندی‌های پروژه.", progress:100, status:"COMPLETED", deadline:"01 SEP 2026", responsible:"PMO"},
       {title:"ENGINEERING", desc:"محاسبات، طراحی و تهیه مدارک ساخت.", progress:70, status:"IN PROGRESS", deadline:"26 SEP 2026", responsible:"ENGINEERING"},
@@ -33,8 +33,8 @@ const projects = [
     ]
   },
   {
-    id:"P-04", name:"Roller", status:"ACTIVE",
-    image:"assets/p4.png",
+    id:"P-04", name:"ROBOTIC MODULE", status:"ACTIVE",
+    image:"assets/project-4.svg",
     stages:[
       {title:"RESEARCH", desc:"بررسی راهکارها و انتخاب معماری ربات.", progress:100, status:"COMPLETED", deadline:"08 SEP 2026", responsible:"R&D"},
       {title:"MECHANICAL", desc:"طراحی بدنه، مکانیزم‌ها و انتقال قدرت.", progress:76, status:"IN PROGRESS", deadline:"24 SEP 2026", responsible:"MECHANICAL"},
