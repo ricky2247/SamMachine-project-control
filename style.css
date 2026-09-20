@@ -751,3 +751,66 @@ footer{background:var(--surface-footer);color:var(--muted);}
     box-shadow:none;
   }
 }
+/* ===== CRITICAL TASKS ===== */
+
+.critical-tasks{
+  margin-top:18px;
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+
+.critical-title{
+  color:var(--red);
+  font:600 9px "Orbitron";
+  letter-spacing:1.8px;
+  margin-bottom:8px;
+}
+
+.critical-task{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:8px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.critical-task:last-child{
+  border-bottom:0;
+}
+
+.critical-task-name{
+  color:var(--text);
+  font:500 10px "Vazirmatn";
+  line-height:1.6;
+  text-align:left;
+  direction:ltr;
+}
+
+.critical-dot{
+  width:7px;
+  height:7px;
+  min-width:7px;
+  border-radius:50%;
+  background:var(--red);
+  box-shadow:0 0 8px rgba(239,119,119,.45);
+  animation:criticalDotBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes criticalDotBlink{
+  0%,100%{
+    opacity:1;
+    box-shadow:0 0 8px rgba(239,119,119,.45);
+  }
+
+  50%{
+    opacity:.2;
+    box-shadow:none;
+  }
+}
+
+.critical-empty{
+  color:var(--muted);
+  font:8px "Orbitron";
+  padding:8px 0;
+}
