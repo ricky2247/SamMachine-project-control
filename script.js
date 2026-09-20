@@ -1,6 +1,10 @@
 const projects = [
   {
-    id:"P-01", name:"Hybrid P. Machine", status:"ON HOLD",
+    id:"P-01", name:"Hybrid P. Machine", status:"ON HOLD",  criticalTasks: [
+    "Complete fabrication drawings",
+    "Order hydraulic components",
+    "Final assembly inspection"
+  ],
     image:"assets/p1.png",
     stages:[
       {title:"FIRST STAGE DESIGN", desc:"طراحی اولیه و شمای کلی دستگاه", progress:100, status:"COMPLETED", deadline:"1 SEP 2026", responsible:"REZA A"},
