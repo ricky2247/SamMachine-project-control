@@ -113,9 +113,33 @@ h1{
   font:500 10px "Vazirmatn";
 }
 .priority-task:last-child{border-bottom:0}
-.priority-dot{width:7px;height:7px;min-width:7px;border-radius:50%;background:#aab4b9}
-.priority-dot.active{background:#35b875;box-shadow:0 0 8px rgba(53,184,117,.35)}
-.priority-dot.pending{background:#d7a52d}
+.priority-dot{
+  width:7px;
+  height:7px;
+  min-width:7px;
+  border-radius:50%;
+  background:#aab4b9;
+}
+
+.priority-dot.active{
+  background:#35b875;
+  box-shadow:0 0 8px rgba(53,184,117,.35);
+  animation: priorityDotBlink 1.2s ease-in-out infinite;
+}
+
+.priority-dot.pending{
+  background:#d7a52d;
+  animation: priorityDotBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes priorityDotBlink{
+  0%,100%{
+    opacity:1;
+  }
+  50%{
+    opacity:.25;
+  }
+}
 .priority-task>div{display:flex;justify-content:space-between;align-items:center;gap:10px;min-width:0;flex:1}
 .task-name{color:var(--text);overflow-wrap:anywhere}
 .task-state{font:8px "Orbitron";color:var(--muted);white-space:nowrap}
