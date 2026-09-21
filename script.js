@@ -23,8 +23,8 @@ const projects = [
     stages:[
       {title:"FINDING AND EXTRACTING SIMILARITIES", desc:"استخراج پارت های مشترک دستگاه با نمونه 180", progress:80, status:"IN PROGRESS", deadline:"-", responsible:"-"},
       {title:"DESIGN", desc:"طراحی شاسی و پایه متناسب", progress:30, status:"IN PROGRESS", deadline:"-", responsible:"REZA A"},
-      {title:"CONTROL", desc:"پیاده‌سازی سیستم کنترل و ارتباطات.", progress:55, status:"IN PROGRESS", deadline:"-", responsible:"CONTROL"},
-      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل.", progress:18, status:"IN PROGRESS", deadline:"-", responsible:"ASSEMBLY"},
+      {title:"ORDERING FOR MANUFACTURING", desc:"سفارش ساخت و تولید", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
+      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل.", progress:0, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
       {title:"COMMISSIONING", desc:"راه‌اندازی و تحویل سیستم.", progress:0, status:"PENDING", deadline:"-", responsible:"QA"}
     ]
   },
