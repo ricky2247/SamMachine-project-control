@@ -21,11 +21,11 @@ const projects = [
     "طراحی پایه مناسب"],
     image:"assets/project-2.svg",
     stages:[
-      {title:"FINDING AND EXTRACTING SIMILARITIES", desc:"استخراج پارت های مشترک دستگاه با نمونه 180", progress:80, status:"IN PROGRESS", deadline:"-", responsible:"REZA A"},
-      {title:"DESIGN", desc:"طراحی مکانیکی و جانمایی اجزای سیستم.", progress:91, status:"IN PROGRESS", deadline:"-", responsible:"ENGINEERING"},
-      {title:"CONTROL", desc:"پیاده‌سازی سیستم کنترل و ارتباطات.", progress:55, status:"IN PROGRESS", deadline:"03 OCT 2026", responsible:"CONTROL"},
-      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل.", progress:18, status:"IN PROGRESS", deadline:"15 OCT 2026", responsible:"ASSEMBLY"},
-      {title:"COMMISSIONING", desc:"راه‌اندازی و تحویل سیستم.", progress:0, status:"PENDING", deadline:"25 OCT 2026", responsible:"QA"}
+      {title:"FINDING AND EXTRACTING SIMILARITIES", desc:"استخراج پارت های مشترک دستگاه با نمونه 180", progress:80, status:"IN PROGRESS", deadline:"-", responsible:"-"},
+      {title:"DESIGN", desc:"طراحی شاسی و پایه متناسب", progress:30, status:"IN PROGRESS", deadline:"-", responsible:"REZA A"},
+      {title:"CONTROL", desc:"پیاده‌سازی سیستم کنترل و ارتباطات.", progress:55, status:"IN PROGRESS", deadline:"-", responsible:"CONTROL"},
+      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل.", progress:18, status:"IN PROGRESS", deadline:"-", responsible:"ASSEMBLY"},
+      {title:"COMMISSIONING", desc:"راه‌اندازی و تحویل سیستم.", progress:0, status:"PENDING", deadline:"-", responsible:"QA"}
     ]
   },
   {
