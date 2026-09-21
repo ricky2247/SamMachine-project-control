@@ -17,7 +17,8 @@ const projects = [
     ]
   },
   {
-    id:"P-02", name:"320 P. Machine", status:"PENDING",
+    id:"P-02", name:"320 P. Machine", status:"PENDING", criticalTasks: [
+    "طراحی پایه مناسب",
     image:"assets/project-2.svg",
     stages:[
       {title:"CONCEPT", desc:"تعریف نیازمندی‌ها و معماری کلی سیستم.", progress:100, status:"COMPLETED", deadline:"05 SEP 2026", responsible:"R&D"},
@@ -28,7 +29,9 @@ const projects = [
     ]
   },
   {
-    id:"P-03", name:"180 P. Machine", status:"ACTIVE",
+    id:"P-03", name:"180 P. Machine", status:"ACTIVE", criticalTasks: [
+    "تغییرات نهایی و رفع ایرادات",
+    "استخراج نقشه ساخت نهایی",
     image:"assets/project-3.svg",
     stages:[
       {title:"REQUIREMENTS", desc:"جمع‌آوری و تحلیل نیازمندی‌های پروژه.", progress:100, status:"COMPLETED", deadline:"01 SEP 2026", responsible:"PMO"},
