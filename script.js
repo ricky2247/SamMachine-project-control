@@ -6,7 +6,7 @@ const projects = [
   ],
     image:"assets/p1.png",
     stages:[
-      {title:"FIRST STAGE DESIGN", desc:"طراحی اولیه و شمای کلی دستگاه", progress:70, status:"COMPLETED", deadline:"1 SEP 2026", responsible:"REZA A"},
+      {title:"FIRST STAGE DESIGN", desc:"طراحی اولیه و شمای کلی دستگاه", progress:70, status:"IN PROGRESS", deadline:"1 SEP 2026", responsible:"REZA A"},
       {title:"PROCUREMENT ESSENTIAL PARTS", desc:"تأمین قطعات و تجهییزات حداقلی برای مشخص شدن ابعاد دیتیل دیزاین", progress:0, status:"IN PROGRESS", deadline:"-", responsible:"PROCUREMENT"},
       {title:"REDESIGN & FABRICATION PLAN", desc:"طراحی جزئی تر و پلن برای روش ساخت اجزایی مثل شاسی و...", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
       {title:"FINDING MANUFACTURER & BUILDING", desc:"مشخص کردن سازنده ها و تامین کننده ها و ساخت", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
@@ -21,8 +21,8 @@ const projects = [
     "طراحی پایه مناسب"],
     image:"assets/project-2.svg",
     stages:[
-      {title:"CONCEPT", desc:"تعریف نیازمندی‌ها و معماری کلی سیستم.", progress:100, status:"COMPLETED", deadline:"05 SEP 2026", responsible:"R&D"},
-      {title:"DESIGN", desc:"طراحی مکانیکی و جانمایی اجزای سیستم.", progress:91, status:"IN PROGRESS", deadline:"22 SEP 2026", responsible:"ENGINEERING"},
+      {title:"FINDING AND EXTRACTING SIMILARITIES", desc:"استخراج پارت های مشترک دستگاه با نمونه 180", progress:80, status:"IN PROGRESS", deadline:"-", responsible:"REZA A"},
+      {title:"DESIGN", desc:"طراحی مکانیکی و جانمایی اجزای سیستم.", progress:91, status:"IN PROGRESS", deadline:"-", responsible:"ENGINEERING"},
       {title:"CONTROL", desc:"پیاده‌سازی سیستم کنترل و ارتباطات.", progress:55, status:"IN PROGRESS", deadline:"03 OCT 2026", responsible:"CONTROL"},
       {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل.", progress:18, status:"IN PROGRESS", deadline:"15 OCT 2026", responsible:"ASSEMBLY"},
       {title:"COMMISSIONING", desc:"راه‌اندازی و تحویل سیستم.", progress:0, status:"PENDING", deadline:"25 OCT 2026", responsible:"QA"}
