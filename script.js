@@ -57,7 +57,7 @@ const projects = [
 const priorityTasks=[
   {name:"Complete fabrication drawings",status:"IN PROGRESS",type:"active"},
   {name:"Order hydraulic components",status:"IN PROGRESS",type:"active"},
-  {name:"تامین مالی رولر",status:"PENDING",type:"pending"}
+  {name:"تامین مالی قطعات رولر",status:"PENDING",type:"pending"}
 ];
 
 let currentProject = 0;
