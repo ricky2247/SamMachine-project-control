@@ -6,7 +6,7 @@ const projects = [
   ],
     image:"assets/p1.png",
     stages:[
-      {title:"FIRST STAGE DESIGN", desc:"طراحی اولیه و شمای کلی دستگاه", progress:100, status:"COMPLETED", deadline:"1 SEP 2026", responsible:"REZA A"},
+      {title:"FIRST STAGE DESIGN", desc:"طراحی اولیه و شمای کلی دستگاه", progress:70, status:"COMPLETED", deadline:"1 SEP 2026", responsible:"REZA A"},
       {title:"PROCUREMENT ESSENTIAL PARTS", desc:"تأمین قطعات و تجهییزات حداقلی برای مشخص شدن ابعاد دیتیل دیزاین", progress:0, status:"IN PROGRESS", deadline:"-", responsible:"PROCUREMENT"},
       {title:"REDESIGN & FABRICATION PLAN", desc:"طراحی جزئی تر و پلن برای روش ساخت اجزایی مثل شاسی و...", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
       {title:"FINDING MANUFACTURER & BUILDING", desc:"مشخص کردن سازنده ها و تامین کننده ها و ساخت", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
