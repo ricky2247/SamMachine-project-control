@@ -19,7 +19,7 @@ const projects = [
   {
     id:"P-02", name:"320 P. Machine", status:"PENDING", criticalTasks: [
     "طراحی پایه مناسب"],
-    image:"assets/project-2.svg",
+    image:"assets/p2.svg",
     stages:[
       {title:"FINDING AND EXTRACTING SIMILARITIES", desc:"استخراج پارت های مشترک دستگاه با نمونه 180", progress:80, status:"IN PROGRESS", deadline:"-", responsible:"-"},
       {title:"DESIGN", desc:"طراحی شاسی و پایه متناسب", progress:30, status:"IN PROGRESS", deadline:"-", responsible:"REZA A"},
@@ -42,21 +42,20 @@ const projects = [
     ]
   },
   {
-    id:"P-04", name:"Roller", status:"PENDING",
-    image:"assets/project-4.svg",
+    id:"P-04", name:"Roller", status:"IN PROGRESS",
+    image:"assets/p4.svg",
     stages:[
-      {title:"RESEARCH", desc:"بررسی راهکارها و انتخاب معماری ربات.", progress:100, status:"COMPLETED", deadline:"08 SEP 2026", responsible:"R&D"},
-      {title:"MECHANICAL", desc:"طراحی بدنه، مکانیزم‌ها و انتقال قدرت.", progress:76, status:"IN PROGRESS", deadline:"24 SEP 2026", responsible:"MECHANICAL"},
-      {title:"ELECTRONICS", desc:"طراحی و مونتاژ الکترونیک و سنسورها.", progress:42, status:"IN PROGRESS", deadline:"02 OCT 2026", responsible:"ELECTRONICS"},
-      {title:"SOFTWARE", desc:"توسعه نرم‌افزار کنترل و تست الگوریتم‌ها.", progress:33, status:"IN PROGRESS", deadline:"12 OCT 2026", responsible:"SOFTWARE"},
-      {title:"TESTING", desc:"تست یکپارچه و آماده‌سازی نمونه نهایی.", progress:0, status:"PENDING", deadline:"22 OCT 2026", responsible:"QA"}
+      {title:"INITIAL CONCEPT DESIGN", desc:"طراحی ایده اولیه", progress:100, status:"COMPLETED", deadline:"-", responsible:"R&D"},
+      {title:"MECHANICAL & ELECTRICAL DESIGN", desc:"ساخت و تهیه اجزا نمونه اولیه", progress:100, status:"COMPLETED", deadline:"-", responsible:"-"},
+      {title:"TESTING", desc:"تست نمونه اولیه و رفع ایرادات و بازطراحی", progress:100, status:"COMPLETED", deadline:"", responsible:"-"},
+      {title:"FINALIZATION", desc:"آماده سازی برای سفارش تعداد", progress:70, status:"PENDING", deadline:"-", responsible:"-"}
     ]
   }
 ];
 
 const priorityTasks=[
-  {name:"Complete fabrication drawings",status:"IN PROGRESS",type:"active"},
-  {name:"Order hydraulic components",status:"IN PROGRESS",type:"active"},
+  {name:"طراحی اتاقک هیبرید",status:"IN PROGRESS",type:"active"},
+  {name:"طراحی مابه التفاوت دستگاه 320",status:"IN PROGRESS",type:"active"},
   {name:"تامین مالی قطعات رولر",status:"PENDING",type:"pending"}
 ];
 
