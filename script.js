@@ -24,7 +24,7 @@ const projects = [
       {title:"SIMILARITY FINDING AND EXTRACTION", desc:"استخراج پارت های مشترک دستگاه با نمونه 180", progress:80, status:"IN PROGRESS", deadline:"-", responsible:"-"},
       {title:"DESIGN", desc:"طراحی شاسی و پایه متناسب", progress:30, status:"IN PROGRESS", deadline:"-", responsible:"REZA A"},
       {title:"MANUFACTURING ORDERING", desc:"سفارش ساخت و تولید", progress:0, status:"PENDING", deadline:"-", responsible:"-"},
-      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل.", progress:0, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
+      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل", progress:0, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
       {title:"FINALIZATION", desc:"آماده سازی برای سفارش تعداد", progress:0, status:"PENDING", deadline:"-", responsible:"QA"}
     ]
   },
@@ -32,13 +32,15 @@ const projects = [
     id:"P-03", name:"180 P. Machine", status:"ACTIVE", criticalTasks: [
     "تغییرات نهایی و رفع ایرادات",
     "استخراج نقشه ساخت نهایی"],
-    image:"assets/project-3.svg",
+    image:"assets/p2.png",
     stages:[
-      {title:"REQUIREMENTS", desc:"جمع‌آوری و تحلیل نیازمندی‌های پروژه.", progress:100, status:"COMPLETED", deadline:"01 SEP 2026", responsible:"PMO"},
-      {title:"ENGINEERING", desc:"محاسبات، طراحی و تهیه مدارک ساخت.", progress:70, status:"IN PROGRESS", deadline:"26 SEP 2026", responsible:"ENGINEERING"},
-      {title:"MATERIAL", desc:"خرید و آماده‌سازی مواد اولیه.", progress:30, status:"ON HOLD", deadline:"30 SEP 2026", responsible:"PROCUREMENT"},
-      {title:"FABRICATION", desc:"ساخت سازه و قطعات مکانیکی.", progress:0, status:"PENDING", deadline:"15 OCT 2026", responsible:"WORKSHOP"},
-      {title:"DELIVERY", desc:"تست نهایی و تحویل پروژه.", progress:0, status:"PENDING", deadline:"30 OCT 2026", responsible:"PMO"}
+      {title:"DESIGN & FABRICATION", desc:"طراحی و ساخت نسخه صفر دستگاه", progress:100, status:"COMPLETED", deadline:"-", responsible:"ENGINEERING"},
+      {title:"TESTING", desc:"ارزیابی و اصلاح نسخه صفر", progress:100, status:"IN PROGRESS", deadline:"-", responsible:"QA"},
+      {title:"DESIGN & FABRICATION", desc:"طراحی و ساخت نسخه یک دستگاه", progress:90, status:"IN PROGRESS", deadline:"-", responsible:"ENGINEERING"},
+      {title:"PROCUREMENT REQUIREMENTS", desc:"تامین ملزومات از داخل و بخش های وارداتی", progress:90, status:"IN PROGRESS", deadline:"-", responsible:"PROCUREMENT"},
+      {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل", progress:90, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
+      {title:"TESTING & REDESIGN", desc:"ارزیابی، اصلاح و اعمال تغییرات روی نسخه یک و طراحی نسخه نهایی", progress:100, status:"COMPLETED", deadline:"-", responsible:"ENGINEERING"},
+      {title:"FINALIZATION", desc:"آماده سازی برای سفارش تعداد", progress:90, status:"IN PROGRESS", deadline:"-", responsible:"-"},
     ]
   },
   {
