@@ -34,9 +34,9 @@ const projects = [
     "استخراج نقشه ساخت نهایی"],
     image:"assets/p3.png",
     stages:[
-      {title:"DESIGN & FABRICATION", desc:"طراحی و ساخت نسخه صفر دستگاه", progress:100, status:"COMPLETED", deadline:"-", responsible:"ENGINEERING"},
+      {title:"DESIGN & FABRICATION #0", desc:"طراحی و ساخت نسخه صفر دستگاه", progress:100, status:"COMPLETED", deadline:"-", responsible:"ENGINEERING"},
       {title:"TESTING", desc:"ارزیابی و اصلاح نسخه صفر", progress:100, status:"IN PROGRESS", deadline:"-", responsible:"QA"},
-      {title:"DESIGN & FABRICATION", desc:"طراحی و ساخت نسخه یک دستگاه", progress:90, status:"IN PROGRESS", deadline:"-", responsible:"ENGINEERING"},
+      {title:"DESIGN & FABRICATION #1", desc:"طراحی و ساخت نسخه یک دستگاه", progress:90, status:"IN PROGRESS", deadline:"-", responsible:"ENGINEERING"},
       {title:"PROCUREMENT REQUIREMENTS", desc:"تامین ملزومات از داخل و بخش های وارداتی", progress:90, status:"IN PROGRESS", deadline:"-", responsible:"PROCUREMENT"},
       {title:"ASSEMBLY", desc:"مونتاژ مکانیک، برق و کنترل", progress:90, status:"PENDING", deadline:"-", responsible:"ASSEMBLY"},
       {title:"TESTING & REDESIGN", desc:"ارزیابی، اصلاح و اعمال تغییرات روی نسخه یک و طراحی نسخه نهایی", progress:100, status:"COMPLETED", deadline:"-", responsible:"ENGINEERING"},
