@@ -32,7 +32,7 @@ const projects = [
     id:"P-03", name:"180 P. Machine", status:"ACTIVE", criticalTasks: [
     "تغییرات نهایی و رفع ایرادات",
     "استخراج نقشه ساخت نهایی"],
-    image:"assets/p2.png",
+    image:"assets/p3.png",
     stages:[
       {title:"DESIGN & FABRICATION", desc:"طراحی و ساخت نسخه صفر دستگاه", progress:100, status:"COMPLETED", deadline:"-", responsible:"ENGINEERING"},
       {title:"TESTING", desc:"ارزیابی و اصلاح نسخه صفر", progress:100, status:"IN PROGRESS", deadline:"-", responsible:"QA"},
